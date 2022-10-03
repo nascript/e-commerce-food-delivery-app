@@ -23,15 +23,51 @@ const products = [
     price: '$32.00',
     quantity: 1,
     imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
+      'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-02-product-03.jpg',
+    imageAlt:
+      'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
+  },
+  {
+    id: 2,
+    name: 'Medium Stuff Satchel',
+    href: '#',
+    color: 'Blue',
+    price: '$32.00',
+    quantity: 1,
+    imageSrc:
+      'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-02-product-02.jpg',
+    imageAlt:
+      'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
+  },
+  {
+    id: 2,
+    name: 'Medium Stuff Satchel',
+    href: '#',
+    color: 'Blue',
+    price: '$32.00',
+    quantity: 1,
+    imageSrc:
+      'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-02.jpg',
+    imageAlt:
+      'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
+  },
+  {
+    id: 2,
+    name: 'Medium Stuff Satchel',
+    href: '#',
+    color: 'Blue',
+    price: '$32.00',
+    quantity: 1,
+    imageSrc:
+      'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-03.jpg',
     imageAlt:
       'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
   },
   // More products...
 ]
 
-export default function Example() {
-  const [open, setOpen] = useState(true)
+export default function Cart({ open, setOpen }) {
+  // const [open, setOpen] = useState(true)
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -117,7 +153,7 @@ export default function Example() {
                                     <div className='flex'>
                                       <button
                                         type='button'
-                                        className='font-medium text-indigo-600 hover:text-indigo-500'
+                                        className='font-medium text-primary hover:text-secondary'
                                       >
                                         Remove
                                       </button>
@@ -142,7 +178,7 @@ export default function Example() {
                       <div className='mt-6'>
                         <a
                           href='#'
-                          className='flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700'
+                          className='flex items-center justify-center rounded-md border border-transparent bg-primary px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700'
                         >
                           Checkout
                         </a>
@@ -152,7 +188,7 @@ export default function Example() {
                           or
                           <button
                             type='button'
-                            className='font-medium text-indigo-600 hover:text-indigo-500'
+                            className='font-medium text-primary hover:text-secondary'
                             onClick={() => setOpen(false)}
                           >
                             Continue Shopping

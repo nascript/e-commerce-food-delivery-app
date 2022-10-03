@@ -232,23 +232,23 @@ const HeroCarousel = () => {
           ''
         )} */}
         <div className='grid grid-cols-1 gap-6 w-full mt-2'>
-          <div className='relative overflow-hidden rounded-b-3xl cursor-pointer'>
+          <div className='relative overflow-hidden  cursor-pointer'>
             <img
               className='object-cover w-full h-96'
               src={dummyListItems[currentIndex].image}
               alt='Flower and sky'
             />
 
-            <div className='absolute -bottom-2 left-0 right-0 px-6 py-4 bg-secondary flex justify-between bg-opacity-30'>
+            <div className='absolute -bottom-2 left-0 right-0 px-6 py-4 bg-secondary flex justify-between bg-opacity-30 items-center'>
               <div>
-                <h4 className='mb-3 text-xl font-semibold tracking-tight text-white opacity-100'>
+                <h4 className='text-xl font-semibold tracking-tight text-white opacity-100'>
                   {dummyListItems[currentIndex].title}
                 </h4>
                 <p className='leading-normal text-gray-100 opacity-100'>
                   {dummyListItems[currentIndex].description}
                 </p>
               </div>
-              <button className='bg-primary py-3 px-5 rounded-lg text-white mt-5 '>
+              <button className='bg-primary py-3 px-5 rounded-lg text-white'>
                 Shop Now
               </button>
             </div>

@@ -51,14 +51,19 @@ const productItems = [
   },
 ]
 
-const Card = () => {
+const Card = ({ openWebFiltersOpen }) => {
   return (
     <section className='text-gray-600 body-font'>
       <div className='container px-5 py-2 mx-auto'>
         <div className='flex flex-wrap -m-4'>
           {productItems?.map((items, index) => {
             return (
-              <div className='lg:w-1/4 md:w-1/2 p-4 w-full' key={index}>
+              <div
+                className={`${
+                  openWebFiltersOpen ? 'lg:w-1/4' : 'lg:w-1/6'
+                } md:w-1/2 p-4 w-full`}
+                key={index}
+              >
                 <div className='bg-secondary rounded-md'>
                   <a className='block relative h-48 rounded overflow-hidden'>
                     <img
