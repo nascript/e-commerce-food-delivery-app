@@ -1,11 +1,4 @@
 import React from 'react'
-import shoesMan1 from '../assets/shoes-man-1.jpg'
-import shoesMan2 from '../assets/shoes-man-2.jpg'
-import shoesMan3 from '../assets/shoes-man-3.jpg'
-import shoesMan4 from '../assets/shoes-man-4.jpg'
-import shoesMan5 from '../assets/shoes-man-5.jpg'
-import shoesWoman from '../assets/shoes-woman.jpg'
-import shoesWoman1 from '../assets/shoes-woman-3.jpg'
 
 const productItems = [
   {
