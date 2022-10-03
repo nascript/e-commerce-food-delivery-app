@@ -44,11 +44,9 @@ const dummyListItems = [
   },
 ]
 
-// console.log('dummyListItems', dummyListItems[0].image)
-
 let count = 0
 let slideInterval
-const HeroCarousel = () => {
+const HeroCarousel = ({ data }) => {
   const slideRef = useRef()
   const [currentIndex, setCurrentIndex] = useState(0)
   const [showArrow, setShowArrow] = useState(true)
@@ -81,17 +79,18 @@ const HeroCarousel = () => {
   }
 
   const handleOnNextClick = () => {
-    count = (count + 1) % dummyListItems.length
+    count = (count + 1) % data.length
     setCurrentIndex(count)
     slideRef.current.classList.add('fade-anim')
   }
   const handleOnPrevClick = () => {
-    const productsLength = dummyListItems.length
+    const productsLength = data.length
     count = (currentIndex + productsLength - 1) % productsLength
     setCurrentIndex(count)
     slideRef.current.classList.add('fade-anim')
   }
 
+  console.log('dummyListItems', data[currentIndex]?.images[0])
   return (
     <>
       <div
@@ -100,12 +99,12 @@ const HeroCarousel = () => {
       >
         <div className='flex'>
           <div className='flex justify-center w-1/3 top-1/2 items-center'>
-            <div>
-              <p className='text-3xl text-secondary font-bold'>
-                {dummyListItems[currentIndex].title}{' '}
+            <div className='wrap w-52'>
+              <p className='text-xl text-secondary font-bold'>
+                {data[currentIndex]?.title}{' '}
               </p>
-              <p className='text-xl text-secondary'>
-                {dummyListItems[currentIndex].description}{' '}
+              <p className='text-md text-secondary'>
+                {data[currentIndex]?.description.slice(0, 50)} ...{' '}
               </p>
               <button className='bg-primary py-3 px-5 rounded-lg text-white mt-5'>
                 Shop Now
@@ -113,7 +112,7 @@ const HeroCarousel = () => {
             </div>
           </div>
           <img
-            src={dummyListItems[currentIndex].image}
+            src={data[currentIndex]?.images[0]}
             alt='img'
             className='h-72 w-2/3 object-cover rounded-r-lg'
           />
@@ -168,10 +167,10 @@ const HeroCarousel = () => {
           <div className='flex justify-center w-1/3 top-1/2 items-center'>
             <div>
               <p className='text-3xl text-secondary font-bold'>
-                {dummyListItems[currentIndex].title}{' '}
+                {data[currentIndex]?.title}{' '}
               </p>
               <p className='text-xl text-secondary'>
-                {dummyListItems[currentIndex].description}{' '}
+                {data[currentIndex]?.description}{' '}
               </p>
               <button className='bg-primary py-3 px-5 rounded-lg text-white mt-5'>
                 Shop Now
@@ -179,7 +178,7 @@ const HeroCarousel = () => {
             </div>
           </div>
           <img
-            src={dummyListItems[currentIndex].image}
+            src={data[currentIndex]?.image}
             alt='img'
             className='h-72 w-2/3 object-cover rounded-r-lg'
           />
@@ -226,17 +225,17 @@ const HeroCarousel = () => {
           <div className='relative overflow-hidden  cursor-pointer'>
             <img
               className='object-cover w-full h-96'
-              src={dummyListItems[currentIndex].image}
+              src={data[currentIndex]?.images[0]}
               alt='Flower and sky'
             />
 
             <div className='absolute -bottom-2 left-0 right-0 px-6 py-4 bg-secondary flex justify-between bg-opacity-30 items-center'>
-              <div>
+              <div className='wrap w-60'>
                 <h4 className='text-xl font-semibold tracking-tight text-white opacity-100'>
-                  {dummyListItems[currentIndex].title}
+                  {data[currentIndex]?.title}
                 </h4>
                 <p className='leading-normal text-gray-100 opacity-100'>
-                  {dummyListItems[currentIndex].description}
+                  {data[currentIndex]?.description.slice(0, 40)}...
                 </p>
               </div>
               <button className='bg-primary py-3 px-5 rounded-lg text-white'>
