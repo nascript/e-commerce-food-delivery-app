@@ -1,12 +1,12 @@
 import React from 'react'
 import Header from '../components/Header'
 import Content from '../components/Content'
-import Hero from '../components/Hero'
+import HeroCarousel from '../components/HeroCarousel'
 const Home = () => {
   return (
     <div>
       <Header />
-      {/* <Hero /> */}
+      <HeroCarousel />
       <Content />
     </div>
   )
