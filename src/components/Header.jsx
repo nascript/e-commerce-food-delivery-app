@@ -5,7 +5,14 @@ import {
   MagnifyingGlassIcon,
   ShoppingBagIcon,
   XMarkIcon,
+  // AvatarIcon,
 } from '@heroicons/react/24/outline'
+import {
+  HomeIcon,
+  UserCircleIcon,
+  Squares2X2Icon,
+  // AvatarIcon,
+} from '@heroicons/react/24/solid'
 import githubIcon from '../assets/images/icons-github.svg'
 import facebookIcon from '../assets/images/icons-facebook.svg'
 import linkedinIcon from '../assets/images/icons-linkedin.svg'
@@ -329,7 +336,7 @@ export default function Example() {
 
       <header className='relative bg-white'>
         <div className=' bg-pink-100 px-4 text-sm font-medium sm:px-6 lg:px-8'>
-          <div className='mx-auto max-w-7xl flex justify-end items-center h-10'>
+          <div className='mx-auto max-w-7xl flex justify-center items-center h-10'>
             {/* <p className='text-xs'>Follow Me on Social Media</p> */}
             <div className='flex items-center gap-3'>
               <p className='text-xs'>Follow Me on Social Media</p>
@@ -361,17 +368,17 @@ export default function Example() {
         >
           <div className='border-b border-gray-200'>
             <div className='flex h-16 items-center'>
-              <button
+              {/* <button
                 type='button'
                 className='rounded-md bg-white p-2 text-gray-400 lg:hidden'
                 onClick={() => setOpen(true)}
               >
                 <span className='sr-only'>Open menu</span>
                 <Bars3Icon className='h-6 w-6' aria-hidden='true' />
-              </button>
+              </button> */}
 
               {/* Logo */}
-              <div className='ml-4 flex lg:ml-0'>
+              <div className='ml-1 flex lg:ml-0'>
                 <a href='#'>
                   <span className='sr-only'>Your Company</span>
                   {/* <img
@@ -381,7 +388,7 @@ export default function Example() {
                   /> */}
                   <img
                     src={logoNasShop}
-                    className='h-14 w-auto'
+                    className='h-12 lg:h-14 w-auto'
                     alt='logo-nas-shop'
                   />
                 </a>
@@ -511,7 +518,7 @@ export default function Example() {
                 </div>
               </Popover.Group>
 
-              <div className='mx-auto w-1/2 max-w-7xl'>
+              <div className='hidden lg:inline mx-auto w-1/2 max-w-7xl'>
                 <div className='mt-1 flex rounded-md shadow-sm '>
                   <input
                     type='text'
@@ -592,6 +599,46 @@ export default function Example() {
           </div>
         </nav>
       </header>
+      {/* BOTTOM NAVIGATION MOBILE */}
+      <div className='border-t-2 lg:hidden fixed bottom-0 w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 bg-white z-50  border-gray-200 shadow-lg'>
+        <div className='flex lg:ml-6 justify-between'>
+          <a
+            href='#'
+            className='p-2 text-gray-400 hover:text-gray-500 text-center '
+          >
+            <span className='sr-only'>Home</span>
+            <HomeIcon className='h-6 w-6 mx-auto' aria-hidden='true' />
+            <span className='text-xs text-center'>Home</span>
+          </a>
+          <a
+            href='#'
+            className='p-2 text-gray-400 hover:text-gray-500 text-center '
+          >
+            <span className='sr-only'>Category</span>
+            <Squares2X2Icon className='h-6 w-6 mx-auto' aria-hidden='true' />
+            <span className='text-xs text-center'>Category</span>
+          </a>
+          <a
+            href='#'
+            className='p-2 text-gray-400 hover:text-gray-500 text-center '
+          >
+            <span className='sr-only'>Search</span>
+            <MagnifyingGlassIcon
+              className='h-6 w-6 mx-auto'
+              aria-hidden='true'
+            />
+            <span className='text-xs text-center'>Search</span>
+          </a>
+          <a
+            href='#'
+            className='p-2 text-gray-400 hover:text-gray-500 text-center '
+          >
+            <span className='sr-only'>Profile</span>
+            <UserCircleIcon className='h-6 w-6 mx-auto' aria-hidden='true' />
+            <span className='text-xs text-center'>Profile</span>
+          </a>
+        </div>
+      </div>
     </div>
   )
 }
