@@ -278,7 +278,7 @@ export default function Example() {
 
             <div
               className={`grid grid-cols-1 gap-x-8 gap-y-10 ${
-                openWebFiltersOpen ? 'lg:grid-cols-4' : 'lg:grid-cols-1'
+                openWebFiltersOpen ? 'lg:grid-cols-5' : 'lg:grid-cols-1'
               }`}
             >
               {/* Filters */}
@@ -359,7 +359,7 @@ export default function Example() {
               )}
 
               {/* Product grid */}
-              <div className='lg:col-span-3  transition duration-300 ease-in-out'>
+              <div className='lg:col-span-4'>
                 {/* Replace with your content */}
                 <Card openWebFiltersOpen={openWebFiltersOpen} />
                 {/* /End replace */}

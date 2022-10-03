@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const productItems = [
   {
@@ -52,20 +52,29 @@ const productItems = [
 ]
 
 const Card = ({ openWebFiltersOpen }) => {
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    fetch('https://fakestoreapi.com/products')
+      .then((res) => res.json())
+      .then((json) => setData(json))
+  }, [])
+
+  console.log('data', data)
   return (
     <section className='text-gray-600 body-font'>
-      <div className='container px-5 py-2 mx-auto'>
-        <div className='flex flex-wrap -m-4'>
-          {productItems?.map((items, index) => {
+      <div className='container px-2 md:px-5 md:py-2 mx-auto'>
+        <div className='flex flex-wrap'>
+          {data?.map((items, index) => {
             return (
               <div
                 className={`${
                   openWebFiltersOpen ? 'lg:w-1/4' : 'lg:w-1/6'
-                } md:w-1/2 p-4 w-full`}
+                } w-1/2 xs:w-1/2 p-4 border-2 border-gray-100 my-1 shadow-md`}
                 key={index}
               >
-                <div className='bg-secondary rounded-md'>
-                  <a className='block relative h-48 rounded overflow-hidden'>
+                <div className='bg-white rounded-md'>
+                  <a className='block relative h-52 lg:h-48 rounded overflow-hidden'>
                     <img
                       alt='ecommerce'
                       className='object-cover object-center w-full h-full block'
@@ -77,10 +86,10 @@ const Card = ({ openWebFiltersOpen }) => {
                   <h3 className='text-gray-500 text-xs tracking-widest title-font mb-1'>
                     {items.category}
                   </h3>
-                  <h2 className='text-gray-900 title-font text-lg font-medium'>
-                    {items.productName}
+                  <h2 className='text-gray-900 title-font text-md font-medium'>
+                    {items.title}
                   </h2>
-                  <p className='mt-1'>{items.price}</p>
+                  <p className='mt-1'>Rp. {items.price} K</p>
                 </div>
               </div>
             )

@@ -52,19 +52,14 @@ const dummyListItems = [
   },
 ]
 
-console.log('dummyListItems', dummyListItems[0].image)
+// console.log('dummyListItems', dummyListItems[0].image)
 
 let count = 0
 let slideInterval
 const HeroCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [showArrow, setShowArrow] = useState(false)
-
   const slideRef = useRef()
-
-  const removeAnimation = () => {
-    slideRef.current.classList.remove('fade-anim')
-  }
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [showArrow, setShowArrow] = useState(true)
 
   useEffect(() => {
     slideRef.current.addEventListener('animationend', removeAnimation)
@@ -75,19 +70,22 @@ const HeroCarousel = () => {
     return () => {
       pauseSlider()
     }
-    // eslint-disable-next-line
   }, [])
 
+  const removeAnimation = () => {
+    slideRef.current.classList.remove('fade-anim')
+  }
+
   const startSlider = () => {
+    // setShowArrow(false)
     slideInterval = setInterval(() => {
       handleOnNextClick()
     }, 3000)
-    setShowArrow(false)
   }
 
   const pauseSlider = () => {
-    clearInterval(slideInterval)
     setShowArrow(true)
+    clearInterval(slideInterval)
   }
 
   const handleOnNextClick = () => {
@@ -128,6 +126,7 @@ const HeroCarousel = () => {
             className='h-72 w-2/3 object-cover rounded-r-lg'
           />
         </div>
+
         {showArrow ? (
           <div className='absolute w-full top-1/2 flex items-center transform -translate-y-1/2 justify-between'>
             <button onClick={handleOnNextClick}>

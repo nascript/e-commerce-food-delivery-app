@@ -162,9 +162,6 @@ export default function Example() {
   const handleOpenCart = () => {
     setOpenCart(true)
   }
-  const handleCloseCart = () => {
-    setOpenCart(false)
-  }
 
   return (
     <>
@@ -379,7 +376,7 @@ export default function Example() {
 
           <nav
             aria-label='Top'
-            className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 border-b border-gray-200'
+            className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 border-b border-gray-200 '
           >
             <div className=''>
               <div className='flex h-16 items-center'>
@@ -445,7 +442,7 @@ export default function Example() {
                                   aria-hidden='true'
                                 />
 
-                                <div className='relative bg-white'>
+                                <div className='relative bg-white z-50 shadow'>
                                   <div className='mx-auto max-w-7xl px-8'>
                                     <div className='grid grid-cols-2 gap-y-10 gap-x-8 py-16'>
                                       <div className='col-start-2 grid grid-cols-2 gap-x-8'>
