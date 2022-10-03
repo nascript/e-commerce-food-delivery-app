@@ -66,7 +66,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function Content({ data }) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
   const [openWebFiltersOpen, setOpenWebFiltersOpen] = useState(true)
 
@@ -361,7 +361,7 @@ export default function Example() {
               {/* Product grid */}
               <div className='lg:col-span-4'>
                 {/* Replace with your content */}
-                <Card openWebFiltersOpen={openWebFiltersOpen} />
+                <Card openWebFiltersOpen={openWebFiltersOpen} data={data} />
                 {/* /End replace */}
               </div>
             </div>

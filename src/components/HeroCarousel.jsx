@@ -1,14 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './animation.css'
 
-const listItems = [
-  'images/shoes-man-1.jpg',
-  'images/shoes-man-2.jpg',
-  'images/shoes-man-3.jpg',
-  'images/shoes-man-4.jpg',
-  'images/shoes-man-5.jpg',
-]
-
 const dummyListItems = [
   {
     title: 'Red Shoes',
@@ -56,7 +48,7 @@ const dummyListItems = [
 
 let count = 0
 let slideInterval
-const HeroCarousel = () => {
+const HeroCarousel = ({ data }) => {
   const slideRef = useRef()
   const [currentIndex, setCurrentIndex] = useState(0)
   const [showArrow, setShowArrow] = useState(true)

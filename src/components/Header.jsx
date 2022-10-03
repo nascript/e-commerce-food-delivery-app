@@ -619,7 +619,7 @@ export default function Example() {
           <div className='flex lg:ml-6 justify-between'>
             <a
               href='#'
-              className='p-2 text-gray-400 hover:text-gray-500 text-center '
+              className='p-2 text-gray-400 hover:text-primary text-center '
             >
               <span className='sr-only'>Home</span>
               <HomeIcon className='h-6 w-6 mx-auto' aria-hidden='true' />
@@ -627,7 +627,7 @@ export default function Example() {
             </a>
             <a
               href='#'
-              className='p-2 text-gray-400 hover:text-gray-500 text-center '
+              className='p-2 text-gray-400 hover:text-primary text-center '
             >
               <span className='sr-only'>Category</span>
               <Squares2X2Icon className='h-6 w-6 mx-auto' aria-hidden='true' />
@@ -635,7 +635,7 @@ export default function Example() {
             </a>
             <a
               href='#'
-              className='p-2 text-gray-400 hover:text-gray-500 text-center '
+              className='p-2 text-gray-400 hover:text-primary text-center '
             >
               <span className='sr-only'>Search</span>
               <MagnifyingGlassIcon

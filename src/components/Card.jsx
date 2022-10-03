@@ -51,14 +51,14 @@ const productItems = [
   },
 ]
 
-const Card = ({ openWebFiltersOpen }) => {
-  const [data, setData] = useState([])
+const Card = ({ openWebFiltersOpen, data }) => {
+  // const [data, setData] = useState([])
 
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-      .then((res) => res.json())
-      .then((json) => setData(json))
-  }, [])
+  // useEffect(() => {
+  //   fetch('https://fakestoreapi.com/products')
+  //     .then((res) => res.json())
+  //     .then((json) => setData(json))
+  // }, [])
 
   console.log('data', data)
   return (
@@ -70,7 +70,7 @@ const Card = ({ openWebFiltersOpen }) => {
               <div
                 className={`${
                   openWebFiltersOpen ? 'lg:w-1/4' : 'lg:w-1/6'
-                } w-1/2 xs:w-1/2 p-4 border-2 border-gray-100 my-1 shadow-md`}
+                } w-1/2 xs:w-1/2 p-4 border-2 border-gray-100 my-1 shadow-sm`}
                 key={index}
               >
                 <div className='bg-white rounded-md'>
