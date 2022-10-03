@@ -78,13 +78,13 @@ const Card = ({ openWebFiltersOpen, data }) => {
                     <img
                       alt='ecommerce'
                       className='object-cover object-center w-full h-full block'
-                      src={items.image}
+                      src={items.images[0]}
                     />
                   </a>
                 </div>
                 <div className='mt-4'>
                   <h3 className='text-gray-500 text-xs tracking-widest title-font mb-1'>
-                    {items.category}
+                    {items.category.name}
                   </h3>
                   <h2 className='text-gray-900 title-font text-md font-medium'>
                     {items.title}

@@ -8,7 +8,7 @@ const Home = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
+    fetch('https://api.escuelajs.co/api/v1/products?offset=0&limit=100')
       .then((res) => res.json())
       .then((json) => setData(json))
   }, [])
